@@ -1,0 +1,12 @@
+{
+  "name": "moultram-genuser",
+  "version": "0.1.0",
+  "author": "Michael Oultram",
+  "summary": "A module designed for creating users easier",
+  "license": "Apache-2.0",
+  "source": "",
+  "project_page": null,
+  "issues_url": null,
+  "dependencies": [],
+  "data_provider": null
+}
