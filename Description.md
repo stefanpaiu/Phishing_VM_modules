@@ -52,7 +52,7 @@ and prevent them from your day-to-day routine. There are 3 (hopefully 5) ways to
 The attacker user is basically you. You have controll (or not) over the VM, and you are the one who has to try the challenges. You will be given pre-installed Metasploit and LibreOffice, so if you use them after reading the Documentation carefully you   will have all the information needed to perform those attacks.
 
 #####Email Server
-The email server is set up in the [mailserver folder](\mailserver). This Puppet module initialises the IMAP through Dovecot and non-encrypted SMTP service. It uses Postfix to send email.
+The email server is set up in the [mailserver folder](mailserver). This Puppet module initialises the IMAP through Dovecot and non-encrypted SMTP service. It uses Postfix to send email.
 
 ```
 Postfix is a free and open-source mail transfer agent (MTA) that routes and delivers electronic mail, intended as an alternative to the widely used Sendmail MTA.
@@ -64,20 +64,20 @@ Dovecot is an open-source IMAP and POP3 server for Linux/UNIX-like systems, writ
 ```
 
 #####Webserver
-The webserver is defined in the [webserver.pp file](phishing\manifests). It is configured as follows:
+The webserver is defined in the [webserver.pp file](phishing/manifests). It is configured as follows:
 -   initialises all the dependant packages (apache, php etc.)  ;
--   runs the [website](\phishing\files\website) using apache and php;
+-   runs the [website](phishing/files/website) using apache and php;
 -   sets the permissions for the uploads folder;
 -   establishes the hostname as 'worklink.vm';
 -   creates the email server users (as each email needs a real user);
 
 #####Victim users
 
-The victim users' configuration can be found in the [name.pp file](\phishing\manifests).
+The victim users' configuration can be found in the [name.pp file](phishing/manifests).
 Those are the users(containers) that can be found on the website and the hacker should get access to. Their setup is simple:
--  the [genuser module](\genuser) module is used to create a user and its password;
--  each container runs a [script file](\phishing\MailReader.java.epp) in the background;
+-  the [genuser module](genuser) module is used to create a user and its password;
+-  each container runs a [script file](phishing/MailReader.java.epp) in the background;
 
 **This file behaves like an user and acts accordingly to any received email.**
-**The script has a dependency on the [JavaMail API file](\phishing) in order to process any email.**
+**The script has a dependency on the [JavaMail API file](/phishing) in order to process any email.**
 
