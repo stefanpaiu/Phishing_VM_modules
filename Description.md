@@ -22,20 +22,23 @@ and prevent them from your day-to-day routine. There are 3 (hopefully 5) ways to
 
 -   Web/Email
 -   PDF files
--   Macros (VBA)
+-   Macros - VBA
 
     *Requirements:*
 
-    -   puppetlabs-java module
+    -   puppetdocker module;
+    -   metasploit module;
+    -   mailserver module;
+    -   sshserver module;
+    -   genuser module;    
+    -   puppetlabs-java module;
+    
     ```
+    
     puppet module install puppetlabs-java --version 1.6.0
+    
+    
     ```
-
-    -   puppetdocker module
-    -   metasploit module
-    -   mailserver module
-    -   sshserver module
-    -   genuser module
 
     *General configuration:*
 
@@ -46,4 +49,18 @@ and prevent them from your day-to-day routine. There are 3 (hopefully 5) ways to
     - **Webserver** running a hiring website (used for pdf and macros attacks)
     - **Victim users** (multiple containers running a script which will behave accordingly depending on the user. It will open unread emails and their attachments and access the files on the webserver. This depends on who the victim is, the position they have and their background. This information comes from the website and can be found in the Solutions document. Will also have preinstalled Acrobat Reader 8.1.2 and Libreoffice)
 
-
+|Attacker|
+|------------------------------------------------------------------------------------------------------------------------------|
+|The attacker user is basically you. You have controll (or not) over the VM, and you are the one who has to try the challenges. You will be given pre-installed Metasploit and LibreOffice, so if you use them after reading the Documentation carefully you   will have all the information needed to perform those attacks.|
+|Email Server|
+|-------------------------------------------------------------------------------------------------------------------------------|
+|aici manca-ti-as
+|
+|Webserver|
+|-------------------------------------------------------------------------------------------------------------------------------|
+|The webserver is defined in the [webserver.pp file](phishing\manifests). It is configured as follows:
+-   initialises all the dependant packages (apache, php etc.)  ;
+-   runs the [website](\phishing\files\website) using apache and php;
+-   sets the permissions for the uploads folder;
+-   establishes the hostname as 'worklink.vm';
+-   creates the email server users (as each email needs a real user);
