@@ -63,5 +63,4 @@ safkanfk|
 -   runs the [website](\phishing\files\website) using apache and php;
 -   sets the permissions for the uploads folder;
 -   establishes the hostname as 'worklink.vm';
--   creates the email server users (as each email needs a real user);
-|
+-   creates the email server users (as each email needs a real user);|
