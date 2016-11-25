@@ -64,7 +64,7 @@ Dovecot is an open-source IMAP and POP3 server for Linux/UNIX-like systems, writ
 ```
 
 #####Webserver
-The webserver is defined in the [webserver.pp file](phishing/manifests). It is configured as follows:
+The webserver is defined in the [webserver.pp file](phishing/manifests/webserver.pp). It is configured as follows:
 -   initialises all the dependant packages (apache, php etc.)  ;
 -   runs the [website](phishing/files/website) using apache and php;
 -   sets the permissions for the uploads folder;
