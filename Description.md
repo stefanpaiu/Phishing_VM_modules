@@ -55,7 +55,7 @@ and prevent them from your day-to-day routine. There are 3 (hopefully 5) ways to
 |Email Server|
 |-------------------------------------------------------------------------------------------------------------------------------|
 |aici manca-ti-as
-|
+safkanfk|
 |Webserver|
 |-------------------------------------------------------------------------------------------------------------------------------|
 |The webserver is defined in the [webserver.pp file](phishing\manifests). It is configured as follows:
@@ -64,3 +64,4 @@ and prevent them from your day-to-day routine. There are 3 (hopefully 5) ways to
 -   sets the permissions for the uploads folder;
 -   establishes the hostname as 'worklink.vm';
 -   creates the email server users (as each email needs a real user);
+|
