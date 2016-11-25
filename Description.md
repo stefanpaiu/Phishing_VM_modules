@@ -71,4 +71,13 @@ The webserver is defined in the [webserver.pp file](phishing\manifests). It is c
 -   establishes the hostname as 'worklink.vm';
 -   creates the email server users (as each email needs a real user);
 
-#####
+#####Victim users
+
+The victim users' configuration can be found in the [name.pp file](\phishing\manifests).
+Those are the users(containers) that can be found on the website and the hacker should get access to. Their setup is simple:
+-  the [genuser module](\genuser) module is used to create a user and its password;
+-  each container runs a [script file](\phishing\MailReader.java.epp) in the background;
+
+**This file behaves like an user and acts accordingly to any received email.**
+**The script has a dependency on the [JavaMail API file](\phishing) in order to process any email.**
+
